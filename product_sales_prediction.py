@@ -336,7 +336,7 @@ class ProductSalesPredictor:
         # 添加数值标签
         for bar, score in zip(bars, r2_scores):
             plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    '.4f', ha='center', va='bottom')
+                    f'{score:.4f}', ha='center', va='bottom', fontsize=9)
 
         # RMSE对比
         plt.subplot(2, 3, 2)
@@ -351,7 +351,7 @@ class ProductSalesPredictor:
         # 添加数值标签
         for bar, score in zip(bars, rmse_scores):
             plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    '.2f', ha='center', va='bottom')
+                    f'{score:.2f}', ha='center', va='bottom', fontsize=9)
 
         # 计算权重矩阵
         weights_matrix = np.array([results[lam]['weights'] for lam in lambda_values])
@@ -529,7 +529,7 @@ class ProductSalesPredictor:
         # 添加数值标签
         for i, (bar, weight) in enumerate(zip(bars, weights)):
             plt.text(weight, bar.get_y() + bar.get_height()/2,
-                    '.4f', ha='left' if weight > 0 else 'right', va='center')
+                    f'{weight:.4f}', ha='left' if weight > 0 else 'right', va='center', fontsize=9)
 
         # 特征重要性百分比
         plt.subplot(2, 3, 2)
@@ -558,7 +558,7 @@ class ProductSalesPredictor:
         # 添加数值标签
         for bar, weight in zip(bars, sorted_weights):
             plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    '.4f', ha='center', va='bottom')
+                    f'{weight:.4f}', ha='center', va='bottom', fontsize=9)
 
         # 不同λ值下各特征的权重变化
         plt.subplot(2, 3, 4)
@@ -594,7 +594,7 @@ class ProductSalesPredictor:
         # 添加数值标签
         for bar, effect in zip(bars, feature_effects):
             plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    '.2f', ha='center', va='bottom' if effect > 0 else 'top')
+                    f'{effect:.2f}', ha='center', va='bottom' if effect > 0 else 'top', fontsize=9)
 
         # 特征敏感性分析
         plt.subplot(2, 3, 6)
@@ -613,6 +613,11 @@ class ProductSalesPredictor:
         plt.xlabel('特征')
         plt.title('特征敏感性分析')
         plt.grid(True, alpha=0.3, axis='y')
+
+        # 添加数值标签
+        for bar, sensitivity in zip(bars, sorted_sensitivities):
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
+                    f'{sensitivity:.2f}', ha='center', va='bottom', fontsize=9)
 
         plt.tight_layout()
 

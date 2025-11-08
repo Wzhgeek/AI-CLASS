@@ -495,7 +495,7 @@ class HousePricePredictor:
 
     def analyze_feature_importance(self, feature_names, save_path=None):
         """分析特征重要性"""
-        plt.figure(figsize=(12, 8))
+        plt.figure(figsize=(14, 10))
 
         weights = self.weights.flatten()
         abs_weights = np.abs(weights)
@@ -527,8 +527,9 @@ class HousePricePredictor:
 
         # 添加数值标签
         for bar, weight in zip(bars, weights):
-            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    '.3f', ha='center', va='bottom' if weight > 0 else 'top')
+            y_pos = bar.get_height() + (0.01 if weight > 0 else -0.01)
+            plt.text(bar.get_x() + bar.get_width()/2, y_pos,
+                    f'{weight:.4f}', ha='center', va='bottom' if weight > 0 else 'top', fontsize=9)
 
         # 特征重要性百分比
         plt.subplot(2, 2, 2)
@@ -568,7 +569,7 @@ class HousePricePredictor:
 
     def plot_data_analysis(self, df, save_path=None):
         """数据探索性分析可视化"""
-        plt.figure(figsize=(16, 12))
+        plt.figure(figsize=(18, 14))
 
         # 房价分布
         plt.subplot(3, 4, 1)
@@ -640,11 +641,13 @@ class HousePricePredictor:
         plt.title('房价 vs 楼层')
         plt.grid(True, alpha=0.3)
 
-        # 特征间的散点图矩阵（简化版）
+        # 房价vs卧室数量散点图
         plt.subplot(3, 4, 9)
-        selected_features = ['area', 'distance_subway', 'price']
-        sns.pairplot(df[selected_features], kind='scatter', diag_kind='hist')
-        plt.suptitle('主要特征散点图矩阵', y=0.95)
+        plt.scatter(df['room_num'], df['price'], alpha=0.6, color='brown', edgecolors='black')
+        plt.xlabel('卧室数量')
+        plt.ylabel('房价 (万元)')
+        plt.title('房价 vs 卧室数量')
+        plt.grid(True, alpha=0.3)
 
         # 房价统计信息
         plt.subplot(3, 4, 10)
@@ -661,22 +664,32 @@ class HousePricePredictor:
         plt.subplot(3, 4, 11)
         quantiles = [0.25, 0.5, 0.75, 0.9, 0.95]
         quantile_values = np.quantile(df['price'], quantiles)
-        plt.bar(range(len(quantiles)), quantile_values,
+        bars = plt.bar(range(len(quantiles)), quantile_values,
                color='lightblue', alpha=0.7, edgecolor='black')
         plt.xticks(range(len(quantiles)), [f'{q*100}%' for q in quantiles])
         plt.ylabel('房价 (万元)')
         plt.title('房价分位数分布')
         plt.grid(True, alpha=0.3, axis='y')
 
+        # 添加数值标签
+        for bar, value in zip(bars, quantile_values):
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
+                    f'{value:.1f}', ha='center', va='bottom', fontsize=8)
+
         # 面积分位数分布
         plt.subplot(3, 4, 12)
         area_quantiles = np.quantile(df['area'], quantiles)
-        plt.bar(range(len(quantiles)), area_quantiles,
+        bars = plt.bar(range(len(quantiles)), area_quantiles,
                color='lightcoral', alpha=0.7, edgecolor='black')
         plt.xticks(range(len(quantiles)), [f'{q*100}%' for q in quantiles])
         plt.ylabel('面积 (m²)')
         plt.title('面积分位数分布')
         plt.grid(True, alpha=0.3, axis='y')
+
+        # 添加数值标签
+        for bar, value in zip(bars, area_quantiles):
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
+                    f'{value:.1f}', ha='center', va='bottom', fontsize=8)
 
         plt.tight_layout()
         if save_path:

@@ -55,11 +55,15 @@
 - ✅ **可视化分析**：12个丰富的分析图表，使用学术风格(SCI风格)
 
 ### 核心算法
-```
-假设函数：y = w₀ + w₁·area + w₂·room_num + w₃·living_room_num + w₄·floor + w₅·distance_subway
-损失函数：L(w) = (1/2m)∑(yᵢ - ŷᵢ)²
-梯度下降：w := w - α·∂L/∂w
-```
+
+**假设函数：**
+$$y = w_0 + w_1 \cdot area + w_2 \cdot room\_num + w_3 \cdot living\_room\_num + w_4 \cdot floor + w_5 \cdot distance\_subway$$
+
+**损失函数：**
+$$L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2$$
+
+**梯度下降：**
+$$w := w - \alpha \cdot \frac{\partial L}{\partial w}$$
 
 ### 主要发现
 1. **面积(area)**：正向影响最强的特征，面积越大房价越高
@@ -78,12 +82,12 @@
 - ✅ **业务分析**：基于权重系数的运营策略建议
 
 ### 核心算法
-```
-假设函数：sales = w₀ + w₁·price + w₂·promotion + w₃·ad_spend + w₄·user_rating
-                + w₅·holiday + w₆·month + w₇·weekday
 
-损失函数：L(w) = (1/2m)∑(yᵢ - ŷᵢ)² + (λ/2)∑wⱼ²
-```
+**假设函数：**
+$$sales = w_0 + w_1 \cdot price + w_2 \cdot promotion + w_3 \cdot ad\_spend + w_4 \cdot user\_rating + w_5 \cdot holiday + w_6 \cdot month + w_7 \cdot weekday$$
+
+**损失函数：**
+$$L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2 + \frac{\lambda}{2}\sum_{j=1}^n w_j^2$$
 
 ### 主要发现
 1. **广告投入(ad_spend)**：最重要因素，投入增加显著提升销量

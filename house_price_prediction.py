@@ -29,14 +29,14 @@ from sklearn.preprocessing import StandardScaler
 import warnings
 warnings.filterwarnings('ignore')
 
-# 设置matplotlib支持中文显示
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans', 'Arial Unicode MS']
+# 设置科研绘图风格
+sns.set_style("whitegrid")  # 使用白色网格背景
+sns.set_context("paper", font_scale=1.2)  # 使用论文风格，字体放大1.2倍
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
-plt.rcParams['font.family'] = 'sans-serif'
-
-# 设置Seaborn样式为学术风格
-sns.set_style("whitegrid")
-sns.set_context("paper", font_scale=1.2)
+plt.rcParams['figure.dpi'] = 300  # 高分辨率
+plt.rcParams['savefig.dpi'] = 300
+plt.rcParams['savefig.bbox'] = 'tight'
 
 # 配置日志
 logging.basicConfig(
@@ -365,7 +365,7 @@ class HousePricePredictor:
             plt.xlabel('迭代次数')
             plt.ylabel('损失值')
             plt.title('不同优化算法的收敛曲线')
-            plt.legend()
+            plt.legend(loc='best')
             plt.grid(True, alpha=0.3)
 
             # 收敛速度分析
@@ -378,7 +378,7 @@ class HousePricePredictor:
             plt.xlabel('迭代次数')
             plt.ylabel('收敛速度')
             plt.title('收敛速度分析')
-            plt.legend()
+            plt.legend(loc='best')
             plt.grid(True, alpha=0.3)
 
         plt.tight_layout()
@@ -423,7 +423,7 @@ class HousePricePredictor:
         plt.xlabel('真实房价 (万元)')
         plt.ylabel('预测房价 (万元)')
         plt.title('预测值 vs 真实值散点图')
-        plt.legend()
+        plt.legend(loc='best')
         plt.grid(True, alpha=0.3)
 
         # 残差图
@@ -469,7 +469,7 @@ class HousePricePredictor:
         plt.xlabel('房价 (万元)')
         plt.ylabel('频次')
         plt.title('预测值与真实值分布对比')
-        plt.legend()
+        plt.legend(loc='best')
         plt.grid(True, alpha=0.3)
 
         # 相对误差分布

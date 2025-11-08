@@ -1,0 +1,26 @@
+{
+  "X_train_shape": "(38, 7)",
+  "X_val_shape": "(9, 7)",
+  "X_test_shape": "(9, 7)",
+  "y_train_shape": "(38, 1)",
+  "y_val_shape": "(9, 1)",
+  "y_test_shape": "(9, 1)",
+  "feature_names": [
+    "price",
+    "promotion",
+    "ad_spend",
+    "user_rating",
+    "holiday",
+    "month",
+    "weekday"
+  ],
+  "best_lambda": 1,
+  "metrics": "{'MSE': 127.92093795308227, 'RMSE': 11.310213877424347, 'R²': 0.9871608292452577}",
+  "lambda_values_tested": [
+    0.01,
+    0.1,
+    1,
+    10,
+    100
+  ]
+}

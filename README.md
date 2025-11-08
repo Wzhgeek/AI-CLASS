@@ -57,12 +57,15 @@
 ### 核心算法
 
 **假设函数：**
+
 $$y = w_0 + w_1 \cdot area + w_2 \cdot room\_num + w_3 \cdot living\_room\_num + w_4 \cdot floor + w_5 \cdot distance\_subway$$
 
 **损失函数：**
+
 $$L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2$$
 
 **梯度下降：**
+
 $$w := w - \alpha \cdot \frac{\partial L}{\partial w}$$
 
 ### 主要发现
@@ -84,9 +87,11 @@ $$w := w - \alpha \cdot \frac{\partial L}{\partial w}$$
 ### 核心算法
 
 **假设函数：**
+
 $$sales = w_0 + w_1 \cdot price + w_2 \cdot promotion + w_3 \cdot ad\_spend + w_4 \cdot user\_rating + w_5 \cdot holiday + w_6 \cdot month + w_7 \cdot weekday$$
 
 **损失函数：**
+
 $$L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2 + \frac{\lambda}{2}\sum_{j=1}^n w_j^2$$
 
 ### 主要发现

@@ -1,0 +1,78 @@
+{
+  "feature_columns": [
+    "area",
+    "room_num",
+    "living_room_num",
+    "floor",
+    "distance_subway",
+    "price"
+  ],
+  "correlation_matrix": [
+    [
+      1.0,
+      0.8971119860964838,
+      0.8320643902697589,
+      0.8693381086898445,
+      -0.8333530577639138,
+      0.9917325573779829
+    ],
+    [
+      0.8971119860964838,
+      1.0,
+      0.7450883161079437,
+      0.8416994476250008,
+      -0.8943379692858663,
+      0.9287629506282399
+    ],
+    [
+      0.8320643902697589,
+      0.7450883161079437,
+      1.0,
+      0.7969955234382935,
+      -0.7247726960644424,
+      0.839018965264088
+    ],
+    [
+      0.8693381086898445,
+      0.8416994476250008,
+      0.7969955234382935,
+      1.0,
+      -0.8006074094200775,
+      0.9030378976997151
+    ],
+    [
+      -0.8333530577639138,
+      -0.8943379692858663,
+      -0.7247726960644424,
+      -0.8006074094200775,
+      1.0,
+      -0.8544991308655141
+    ],
+    [
+      0.9917325573779829,
+      0.9287629506282399,
+      0.839018965264088,
+      0.9030378976997151,
+      -0.8544991308655141,
+      1.0
+    ]
+  ],
+  "correlation_matrix_columns": [
+    "area",
+    "room_num",
+    "living_room_num",
+    "floor",
+    "distance_subway",
+    "price"
+  ],
+  "correlation_matrix_index": [
+    "area",
+    "room_num",
+    "living_room_num",
+    "floor",
+    "distance_subway",
+    "price"
+  ],
+  "price_correlations": "{'area': np.float64(0.9917325573779829), 'room_num': np.float64(0.9287629506282399), 'living_room_num': np.float64(0.839018965264088), 'floor': np.float64(0.9030378976997151), 'distance_subway': np.float64(-0.8544991308655141)}",
+  "correlation_analysis": "{'area': {'correlation_value': 0.9917325573779829, 'direction': '正相关', 'strength': '强', 'description': 'area: 正相关 (强相关), 相关系数=0.992'}, 'room_num': {'correlation_value': 0.9287629506282399, 'direction': '正相关', 'strength': '强', 'description': 'room_num: 正相关 (强相关), 相关系数=0.929'}, 'living_room_num': {'correlation_value': 0.839018965264088, 'direction': '正相关', 'strength': '强', 'description': 'living_room_num: 正相关 (强相关), 相关系数=0.839'}, 'floor': {'correlation_value': 0.9030378976997151, 'direction': '正相关', 'strength': '强', 'description': 'floor: 正相关 (强相关), 相关系数=0.903'}, 'distance_subway': {'correlation_value': -0.8544991308655141, 'direction': '负相关', 'strength': '强', 'description': 'distance_subway: 负相关 (强相关), 相关系数=-0.854'}}"
+}

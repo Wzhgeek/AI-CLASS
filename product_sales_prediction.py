@@ -192,8 +192,7 @@ class ProductSalesPredictor:
 
         # 相关性热力图
         plt.subplot(2, 2, 1)
-        mask = np.triu(np.ones_like(corr_matrix, dtype=bool))
-        sns.heatmap(corr_matrix, mask=mask, annot=True, cmap='coolwarm', center=0,
+        sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', center=0,
                    square=True, cbar_kws={'shrink': 0.8}, fmt='.3f')
         plt.title('特征相关性热力图')
 
@@ -236,6 +235,32 @@ class ProductSalesPredictor:
         if save_path:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
             logger.info(f"相关性分析图表已保存至: {save_path}")
+
+        # 保存相关系数矩阵数据到plots目录
+        correlation_data = {
+            'feature_columns': feature_cols,
+            'correlation_matrix': corr_matrix.values.tolist(),
+            'correlation_matrix_columns': feature_cols,
+            'correlation_matrix_index': feature_cols,
+            'sales_correlations': {name: corr_matrix.loc[name, 'sales'] for name in feature_cols[:-1]},  # 排除sales本身
+            'correlation_analysis': {}
+        }
+
+        # 为每个特征添加相关性分析
+        for feature in sales_corr.index[::-1]:
+            corr_value = corr_matrix.loc[feature, 'sales']
+            direction = "正相关" if corr_value > 0 else "负相关"
+            strength = "强" if abs(corr_value) > 0.5 else "中等" if abs(corr_value) > 0.3 else "弱"
+            correlation_data['correlation_analysis'][feature] = {
+                'correlation_value': float(corr_value),
+                'direction': direction,
+                'strength': strength,
+                'description': f"{feature}: {direction} ({strength}相关), 相关系数={corr_value:.3f}"
+            }
+
+        data_filename = "correlation_analysis_data.json"
+        self.save_plot_data(correlation_data, os.path.join("plots", data_filename))
+
         plt.close()
 
         # 输出相关性分析结果

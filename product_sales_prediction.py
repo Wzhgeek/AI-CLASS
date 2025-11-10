@@ -213,7 +213,7 @@ class ProductSalesPredictor:
         # 添加相关系数数值
         for i, (name, corr) in enumerate(zip(sales_corr.index, sales_corr.values)):
             actual_corr = corr_matrix.loc[name, 'sales']
-            plt.text(corr + 0.01, i, '.3f', va='center')
+            plt.text(corr - 0.02, i, f'{actual_corr:.3f}', ha='right', va='center', fontsize=8)
 
         # 散点图：销量vs广告投入
         plt.subplot(2, 2, 3)
@@ -335,8 +335,8 @@ class ProductSalesPredictor:
 
         # 添加数值标签
         for bar, score in zip(bars, r2_scores):
-            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    f'{score:.4f}', ha='center', va='bottom', fontsize=9)
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.005,
+                    f'{score:.4f}', ha='center', va='bottom', fontsize=8)
 
         # RMSE对比
         plt.subplot(2, 3, 2)
@@ -350,8 +350,8 @@ class ProductSalesPredictor:
 
         # 添加数值标签
         for bar, score in zip(bars, rmse_scores):
-            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    f'{score:.2f}', ha='center', va='bottom', fontsize=9)
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.2,
+                    f'{score:.1f}', ha='center', va='bottom', fontsize=8)
 
         # 计算权重矩阵
         weights_matrix = np.array([results[lam]['weights'] for lam in lambda_values])
@@ -528,18 +528,22 @@ class ProductSalesPredictor:
 
         # 添加数值标签
         for i, (bar, weight) in enumerate(zip(bars, weights)):
-            plt.text(weight, bar.get_y() + bar.get_height()/2,
-                    f'{weight:.4f}', ha='left' if weight > 0 else 'right', va='center', fontsize=9)
+            plt.text(weight + (0.1 if weight > 0 else -0.1), bar.get_y() + bar.get_height()/2,
+                    f'{weight:.2f}', ha='left' if weight > 0 else 'right', va='center', fontsize=7)
 
         # 特征重要性百分比
         plt.subplot(2, 3, 2)
         abs_weights = np.abs(weights)
         importance_percent = (abs_weights / abs_weights.sum()) * 100
 
-        plt.pie(importance_percent, labels=self.feature_names, autopct='%1.1f%%',
-               startangle=90, colors=plt.cm.Set3.colors)
+        # 创建饼图，不在扇形内显示百分比
+        wedges, texts = plt.pie(importance_percent, startangle=90, colors=plt.cm.Set3.colors)
         plt.title('特征重要性百分比')
         plt.axis('equal')
+
+        # 创建图例，显示特征名称和百分比
+        legend_labels = [f'{feature}: {percent:.1f}%' for feature, percent in zip(self.feature_names, importance_percent)]
+        plt.legend(wedges, legend_labels, title="特征重要性", loc="center left", bbox_to_anchor=(1, 0.5), fontsize=8)
 
         # 权重绝对值排序
         plt.subplot(2, 3, 3)
@@ -557,8 +561,8 @@ class ProductSalesPredictor:
 
         # 添加数值标签
         for bar, weight in zip(bars, sorted_weights):
-            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    f'{weight:.4f}', ha='center', va='bottom', fontsize=9)
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
+                    f'{weight:.2f}', ha='center', va='bottom', fontsize=8)
 
         # 不同λ值下各特征的权重变化
         plt.subplot(2, 3, 4)
@@ -593,8 +597,8 @@ class ProductSalesPredictor:
 
         # 添加数值标签
         for bar, effect in zip(bars, feature_effects):
-            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    f'{effect:.2f}', ha='center', va='bottom' if effect > 0 else 'top', fontsize=9)
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + (0.1 if effect > 0 else -0.1),
+                    f'{effect:.1f}', ha='center', va='bottom' if effect > 0 else 'top', fontsize=7)
 
         # 特征敏感性分析
         plt.subplot(2, 3, 6)
@@ -616,8 +620,8 @@ class ProductSalesPredictor:
 
         # 添加数值标签
         for bar, sensitivity in zip(bars, sorted_sensitivities):
-            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height(),
-                    f'{sensitivity:.2f}', ha='center', va='bottom', fontsize=9)
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
+                    f'{sensitivity:.1f}', ha='center', va='bottom', fontsize=8)
 
         plt.tight_layout()
 
@@ -657,19 +661,19 @@ class ProductSalesPredictor:
 
         for i, (feature, weight) in enumerate(zip(self.feature_names, weights)):
             if feature == 'price':
-                impact = "价格每上涨1元，销量" + ("减少" if weight < 0 else "增加") + ".0f"
+                impact = f"价格每上涨1元，销量{('减少' if weight < 0 else '增加')}{abs(weight):.0f}件"
             elif feature == 'promotion':
-                impact = "促销期间销量相比不促销" + (".0f" if weight > 0 else ".0f")
+                impact = f"促销期间销量相比不促销{('增加' if weight > 0 else '减少')}{abs(weight):.0f}件"
             elif feature == 'ad_spend':
-                impact = "广告投入每增加1元，销量" + (".0f" if weight > 0 else ".0f")
+                impact = f"广告投入每增加1元，销量{('增加' if weight > 0 else '减少')}{abs(weight):.0f}件"
             elif feature == 'user_rating':
-                impact = "用户评分每提高0.1分，销量" + (".0f" if weight > 0 else ".0f")
+                impact = f"用户评分每提高0.1分，销量{('增加' if weight > 0 else '减少')}{abs(weight):.0f}件"
             elif feature == 'holiday':
-                impact = "节假日销量相比工作日" + (".0f" if weight > 0 else ".0f")
+                impact = f"节假日销量相比工作日{('增加' if weight > 0 else '减少')}{abs(weight):.0f}件"
             elif feature == 'month':
-                impact = "月份增加1个月，销量" + (".0f" if weight > 0 else ".0f")
+                impact = f"月份增加1个月，销量{('增加' if weight > 0 else '减少')}{abs(weight):.0f}件"
             elif feature == 'weekday':
-                impact = "星期数增加1天，销量" + (".0f" if weight > 0 else ".0f")
+                impact = f"星期数增加1天，销量{('增加' if weight > 0 else '减少')}{abs(weight):.0f}件"
 
             logger.info(f"• {feature}: 权重={weight:.4f}, {impact}")
 

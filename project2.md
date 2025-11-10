@@ -33,12 +33,13 @@
 
 2. 模型构建：
 •   假设函数：
-
+$$
      sales = w_0 + w_1 \cdot price + w_2 \cdot promotion + w_3 \cdot ad\_spend + w_4 \cdot user\_rating + w_5 \cdot holiday + w_6 \cdot month + w_7 \cdot weekday 
+$$
 •   损失函数：MSE + L2正则项 (ridge回归)
-
+$$
      L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2 + \frac{\lambda}{2}\sum_{j=1}^n w_j^2 \text{（防止过拟合）} 
-
+$$
 3. 优化算法：
 •   实现带正则项的梯度下降，对比不同λ(0.01、0.1、1、10)对模型性能的影响。
 

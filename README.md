@@ -26,11 +26,69 @@
 ├── 糖尿病预测系统分析报告.md               # 项目三深度分析报告
 ├── 手写数字识别系统分析报告.md               # 项目四深度分析报告
 ├── README.md                              # 项目说明文档
-├── house_price_data/                      # 项目一数据与图表目录
-├── product_sales_data/                    # 项目二数据与图表目录
-├── diabetes_data/                         # 项目三数据与图表目录
-└── digit_recognition_data/                # 项目四数据与图表目录
+├── house_price_data/                      # 项目一数据保存目录
+│   ├── plots/                            # 项目一图表文件
+│   ├── training_data/                    # 项目一训练数据
+│   ├── evaluation_data/                  # 项目一评估数据
+│   └── feature_analysis/                 # 项目一特征分析数据
+├── product_sales_data/                    # 项目二数据保存目录
+│   ├── plots/                            # 项目二图表文件
+│   ├── training_data/                    # 项目二训练数据
+│   ├── evaluation_data/                  # 项目二评估数据
+│   └── feature_analysis/                 # 项目二特征分析数据
+├── diabetes_data/                         # 项目三数据保存目录
+│   ├── plots/                            # 项目三图表文件
+│   ├── training_data/                    # 项目三训练数据
+│   ├── evaluation_data/                  # 项目三评估数据
+│   └── feature_analysis/                 # 项目三特征分析数据
+└── digit_recognition_data/                # 项目四数据保存目录
+    ├── plots/                            # 项目四图表文件
+    └── evaluation_data/                  # 项目四评估数据
 ```
+
+---
+
+## 项目一：城市二手房房价预测系统 (多元线性回归)
+
+### 功能特性
+- ✅ **数据预处理**：缺失值处理（2%缺失率模拟）、异常值处理（面积>200m²）、特征标准化
+- ✅ **多元线性回归模型**：手动实现完整的线性回归算法
+- ✅ **三种优化算法**：批量梯度下降(BGD)、随机梯度下降(SGD)、小批量梯度下降(MBGD)
+- ✅ **收敛分析**：损失函数收敛曲线、收敛速度分析、算法性能对比
+- ✅ **模型评估**：R²、MAE、MSE、RMSE指标计算
+- ✅ **可视化分析**：12个丰富的分析图表，使用学术风格(SCI风格)
+
+### 核心算法
+- **假设函数**：$y = w_0 + w_1 \cdot area + w_2 \cdot room\_num + w_3 \cdot living\_room\_num + w_4 \cdot floor + w_5 \cdot distance\_subway$
+- **损失函数**：$L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2$
+
+### 主要发现
+1. **面积(area)**：正向影响最强的特征，面积越大房价越高。
+2. **地铁距离(distance_subway)**：负向影响显著，距离越远房价越低。
+3. **收敛对比**：BGD收敛稳定但较慢，SGD收敛快但震荡明显。
+
+---
+
+## 项目二：电商产品销量预测系统 (Ridge回归与正则化)
+
+### 功能特性
+- ✅ **时间特征提取**：从日期中提取月份(1-12)和星期(1-7)特征
+- ✅ **特征相关性分析**：皮尔逊相关系数热力图和重要性排序
+- ✅ **Ridge回归**：L2正则化防止过拟合
+- ✅ **正则化调参**：λ值从0.01到100的性能对比分析
+- ✅ **模型评估**：R²、RMSE指标，训练/验证/测试集分离
+- ✅ **业务分析**：基于权重系数的运营策略建议
+
+### 核心算法
+- **假设函数**：$sales = w_0 + w_1 \cdot price + w_2 \cdot promotion + w_3 \cdot ad\_spend + w_4 \cdot user\_rating + w_5 \cdot holiday + w_6 \cdot month + w_7 \cdot weekday$
+- **损失函数**：$L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2 + \frac{\lambda}{2}\sum_{j=1}^n w_j^2$
+
+### 主要发现
+1. **广告投入(ad_spend)**：最重要因素，投入增加显著提升销量。
+2. **价格(price)**：负相关，价格过高抑制销量。
+3. **正则化效果**：λ=1.0在偏差-方差平衡中表现最佳。
+
+---
 
 ## 项目三：糖尿病预测系统 (二分类基础)
 
@@ -50,6 +108,8 @@
 2. **BMI 与 肥胖**：肥胖人群（BMI ≥ 30）的患病风险是非肥胖人群的 **6 倍以上**。
 3. **年龄因素**：40-50 岁年龄段表现出最高的患病比例（约 55%）。
 
+---
+
 ## 项目四：手写数字识别系统 (多分类拓展)
 
 ### 功能特性
@@ -68,6 +128,8 @@
 2. **易混淆数字**：数字 1 与 8 存在最高的相互误判率，主因是部分书写风格的像素重叠。
 3. **分类性能**：系统最终达到了 **96.11%** 的测试准确率。
 
+---
+
 ## 技术栈
 
 ### 核心依赖
@@ -80,19 +142,24 @@ scikit-learn>=1.0.0    # 评估指标与数据集对比
 scipy>=1.7.0           # 优化算法支持
 ```
 
+---
+
 ## 使用方法
 
-### 1. 运行糖尿病预测 (项目三)
+### 1. 环境配置
 ```bash
-python diabetes_prediction.py
+pip install numpy pandas matplotlib seaborn scikit-learn scipy
 ```
-**重点输出**：`diabetes_data/plots/decision_boundary.png` (决策边界)
 
-### 2. 运行手写数字识别 (项目四)
+### 2. 运行项目
 ```bash
-python digit_recognition_prediction.py
+python house_price_prediction.py       # 项目一
+python product_sales_prediction.py     # 项目二
+python diabetes_prediction.py          # 项目三
+python digit_recognition_prediction.py # 项目四
 ```
-**重点输出**：`digit_recognition_data/plots/weights_vis.png` (权重热图)
+
+---
 
 ## 实验结果对比
 
@@ -107,10 +174,7 @@ python digit_recognition_prediction.py
 
 ## 业务建议
 
-### 糖尿病预防策略
-1. **重点监控**：针对血糖 > 120 mg/dL 或 BMI > 30 的人群应建立高风险预警。
-2. **筛查年龄**：建议从 30 岁起定期进行糖尿病专项筛查，尤其关注 40 岁后的风险陡增期。
-
-### 识别系统优化
-1. **非线性升级**：对于更复杂的手写体识别，建议将 OvA 逻辑回归升级为多层感知机 (MLP) 或卷积神经网络 (CNN)。
-2. **特征工程**：引入边缘检测或 HOG 特征可进一步降低数字 1 和 8 的误识别率。
+1. **房地产投资**：优先关注面积适中且地铁可达性高的房源。
+2. **电商运营**：加大广告投入是提升销量的最有效手段，同时应在节假日配合促销。
+3. **糖尿病预防**：建立基于血糖和 BMI 的早期预警系统，对 40 岁以上高危人群加强筛查。
+4. **数字识别优化**：对于复杂书写体，建议引入多层感知机 (MLP) 或卷积神经网络 (CNN) 提升鲁棒性。

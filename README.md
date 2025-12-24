@@ -118,8 +118,17 @@ $$
 - ✅ **对比实验**：手动实现版本与 `sklearn.linear_model.LogisticRegression` 的性能对齐
 
 ### 核心算法
-- **Sigmoid函数**: $g(z) = \frac{1}{1 + e^{-z}}$
-- **代价函数**: $J(w) = -\frac{1}{m} \sum [y \log(h) + (1-y) \log(1-h)]$
+- **Sigmoid函数**: 
+
+$$
+g(z) = \frac{1}{1 + e^{-z}}
+$$
+
+- **代价函数**: 
+
+$$
+J(w) = -\frac{1}{m} \sum [y \log(h) + (1-y) \log(1-h)]
+$$
 
 ### 主要发现
 1. **血糖 (Glucose)**：预测糖尿病的“金标准”，其权重系数远超其他特征。
@@ -139,10 +148,12 @@ $$
 
 ### 核心算法
 - **正则化代价函数**: 
+
 $$
 J(w) = J_{orig}(w) + \frac{\lambda}{2m} \sum w_j^2
 $$
 - **多分类预测**: 
+
 $$
 \hat{y} = \arg\max_{i} P(y=i|X; \theta^{(i)})
 $$

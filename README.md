@@ -59,8 +59,14 @@
 - ✅ **可视化分析**：12个丰富的分析图表，使用学术风格(SCI风格)
 
 ### 核心算法
-- **假设函数**：$y = w_0 + w_1 \cdot area + w_2 \cdot room\_num + w_3 \cdot living\_room\_num + w_4 \cdot floor + w_5 \cdot distance\_subway$
-- **损失函数**：$L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2$
+- **假设函数**：
+$$
+y = w_0 + w_1 \cdot area + w_2 \cdot room\_num + w_3 \cdot living\_room\_num + w_4 \cdot floor + w_5 \cdot distance\_subway
+$$
+- **损失函数**：
+$$
+L(w) = \frac{1}{2m}\sum_{i=1}^m(y_i - \hat{y}_i)^2
+$$
 
 ### 主要发现
 1. **面积(area)**：正向影响最强的特征，面积越大房价越高。
@@ -120,8 +126,14 @@
 - ✅ **误分类剖析**：可视化预测错误的样本，挖掘线性模型的局限性
 
 ### 核心算法
-- **正则化代价函数**: $J(w) = J_{orig}(w) + \frac{\lambda}{2m} \sum w_j^2$
-- **多分类预测**: $\hat{y} = \arg\max_{i} P(y=i|X; \theta^{(i)})$
+- **正则化代价函数**: 
+$$
+J(w) = J_{orig}(w) + \frac{\lambda}{2m} \sum w_j^2
+$$
+- **多分类预测**: 
+$$
+\hat{y} = \arg\max_{i} P(y=i|X; \theta^{(i)})
+$$
 
 ### 主要发现
 1. **正则化效果**：λ=0.1 时在 MNIST 简化版数据集上达到了最佳的泛化性能。

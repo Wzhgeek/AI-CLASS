@@ -1,0 +1,149 @@
+2025-12-24 15:19:50,994 - __main__ - INFO - 开始运行糖尿病预测系统...
+2025-12-24 15:19:50,994 - __main__ - INFO - 创建目录: diabetes_data
+2025-12-24 15:19:50,994 - __main__ - INFO - 创建目录: diabetes_data/plots
+2025-12-24 15:19:50,995 - __main__ - INFO - 创建目录: diabetes_data/training_data
+2025-12-24 15:19:50,995 - __main__ - INFO - 创建目录: diabetes_data/evaluation_data
+2025-12-24 15:19:50,995 - __main__ - INFO - 创建目录: diabetes_data/feature_analysis
+2025-12-24 15:19:50,996 - __main__ - INFO - 糖尿病预测器初始化完成
+2025-12-24 15:19:50,996 - __main__ - INFO - 尝试从 sklearn.datasets 加载数据集...
+2025-12-24 15:19:58,494 - __main__ - INFO - 成功加载数据，样本数量: 768
+2025-12-24 15:19:58,786 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:19:58,791 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:19:58,881 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:19:58,882 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:19:59,872 - __main__ - INFO - 数据分析图保存至: diabetes_data/plots/data_analysis.png
+2025-12-24 15:19:59,873 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/correlation_data.json
+2025-12-24 15:19:59,874 - __main__ - INFO - 开始数据预处理...
+2025-12-24 15:19:59,877 - __main__ - INFO - 训练集大小: 614, 测试集大小: 154
+2025-12-24 15:20:12,044 - __main__ - INFO - 开始运行糖尿病预测系统...
+2025-12-24 15:20:12,045 - __main__ - INFO - 创建目录: diabetes_data
+2025-12-24 15:20:12,045 - __main__ - INFO - 创建目录: diabetes_data/plots
+2025-12-24 15:20:12,045 - __main__ - INFO - 创建目录: diabetes_data/training_data
+2025-12-24 15:20:12,045 - __main__ - INFO - 创建目录: diabetes_data/evaluation_data
+2025-12-24 15:20:12,045 - __main__ - INFO - 创建目录: diabetes_data/feature_analysis
+2025-12-24 15:20:12,045 - __main__ - INFO - 糖尿病预测器初始化完成
+2025-12-24 15:20:12,045 - __main__ - INFO - 尝试从 sklearn.datasets 加载数据集...
+2025-12-24 15:20:12,057 - __main__ - INFO - 成功加载数据，样本数量: 768
+2025-12-24 15:20:12,164 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:12,168 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:12,211 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:12,213 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:13,048 - __main__ - INFO - 数据分析图保存至: diabetes_data/plots/data_analysis.png
+2025-12-24 15:20:13,049 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/correlation_data.json
+2025-12-24 15:20:13,049 - __main__ - INFO - 开始数据预处理...
+2025-12-24 15:20:23,056 - __main__ - INFO - 开始运行糖尿病预测系统...
+2025-12-24 15:20:23,056 - __main__ - INFO - 创建目录: diabetes_data
+2025-12-24 15:20:23,056 - __main__ - INFO - 创建目录: diabetes_data/plots
+2025-12-24 15:20:23,056 - __main__ - INFO - 创建目录: diabetes_data/training_data
+2025-12-24 15:20:23,057 - __main__ - INFO - 创建目录: diabetes_data/evaluation_data
+2025-12-24 15:20:23,057 - __main__ - INFO - 创建目录: diabetes_data/feature_analysis
+2025-12-24 15:20:23,057 - __main__ - INFO - 糖尿病预测器初始化完成
+2025-12-24 15:20:23,057 - __main__ - INFO - 尝试从 sklearn.datasets 加载数据集...
+2025-12-24 15:20:23,061 - __main__ - INFO - 成功加载数据，样本数量: 768
+2025-12-24 15:20:23,188 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:23,191 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:23,249 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:23,253 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:24,286 - __main__ - INFO - 数据分析图保存至: diabetes_data/plots/data_analysis.png
+2025-12-24 15:20:24,286 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/correlation_data.json
+2025-12-24 15:20:24,287 - __main__ - INFO - 开始数据预处理...
+2025-12-24 15:20:24,290 - __main__ - INFO - 训练集大小: 614, 测试集大小: 154
+2025-12-24 15:20:24,290 - __main__ - INFO - 迭代 0, 代价: 0.632866
+2025-12-24 15:20:24,295 - __main__ - INFO - 迭代 500, 代价: 0.466207
+2025-12-24 15:20:24,299 - __main__ - INFO - 迭代 1000, 代价: 0.466207
+2025-12-24 15:20:24,303 - __main__ - INFO - 迭代 1500, 代价: 0.466207
+2025-12-24 15:20:24,308 - __main__ - INFO - 手动梯度下降训练完成，最终代价: 0.466207
+2025-12-24 15:20:24,438 - __main__ - INFO - 训练历史图保存至: diabetes_data/plots/training_history.png
+2025-12-24 15:20:24,439 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/training_history_data.json
+2025-12-24 15:20:24,656 - __main__ - INFO - 评估结果图保存至: diabetes_data/plots/model_evaluation.png
+2025-12-24 15:20:24,657 - __main__ - INFO - 绘图数据已保存至: diabetes_data/evaluation_data/evaluation_results.json
+2025-12-24 15:20:24,791 - __main__ - INFO - 特征分析图保存至: diabetes_data/plots/feature_importance.png
+2025-12-24 15:20:38,294 - __main__ - INFO - 开始运行糖尿病预测系统...
+2025-12-24 15:20:38,294 - __main__ - INFO - 创建目录: diabetes_data
+2025-12-24 15:20:38,294 - __main__ - INFO - 创建目录: diabetes_data/plots
+2025-12-24 15:20:38,294 - __main__ - INFO - 创建目录: diabetes_data/training_data
+2025-12-24 15:20:38,294 - __main__ - INFO - 创建目录: diabetes_data/evaluation_data
+2025-12-24 15:20:38,294 - __main__ - INFO - 创建目录: diabetes_data/feature_analysis
+2025-12-24 15:20:38,294 - __main__ - INFO - 糖尿病预测器初始化完成
+2025-12-24 15:20:38,294 - __main__ - INFO - 尝试从 sklearn.datasets 加载数据集...
+2025-12-24 15:20:38,313 - __main__ - INFO - 成功加载数据，样本数量: 768
+2025-12-24 15:20:38,521 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:38,529 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:38,602 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:38,606 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:20:39,619 - __main__ - INFO - 数据分析图保存至: diabetes_data/plots/data_analysis.png
+2025-12-24 15:20:39,619 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/correlation_data.json
+2025-12-24 15:20:39,620 - __main__ - INFO - 开始数据预处理...
+2025-12-24 15:20:39,623 - __main__ - INFO - 训练集大小: 614, 测试集大小: 154
+2025-12-24 15:20:39,623 - __main__ - INFO - 迭代 0, 代价: 0.632866
+2025-12-24 15:20:39,627 - __main__ - INFO - 迭代 500, 代价: 0.466207
+2025-12-24 15:20:39,631 - __main__ - INFO - 迭代 1000, 代价: 0.466207
+2025-12-24 15:20:39,635 - __main__ - INFO - 迭代 1500, 代价: 0.466207
+2025-12-24 15:20:39,639 - __main__ - INFO - 手动梯度下降训练完成，最终代价: 0.466207
+2025-12-24 15:20:39,755 - __main__ - INFO - 训练历史图保存至: diabetes_data/plots/training_history.png
+2025-12-24 15:20:39,755 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/training_history_data.json
+2025-12-24 15:20:39,980 - __main__ - INFO - 评估结果图保存至: diabetes_data/plots/model_evaluation.png
+2025-12-24 15:20:39,980 - __main__ - INFO - 绘图数据已保存至: diabetes_data/evaluation_data/evaluation_results.json
+2025-12-24 15:20:40,161 - __main__ - INFO - 特征分析图保存至: diabetes_data/plots/feature_importance.png
+2025-12-24 15:20:40,161 - __main__ - INFO - 数据已保存至: diabetes_data/feature_analysis/feature_importance.json
+2025-12-24 15:20:40,197 - __main__ - INFO - 数据已保存至: diabetes_data/feature_analysis/feature_importance.json
+2025-12-24 15:20:40,534 - __main__ - INFO - 决策边界图保存至: diabetes_data/plots/decision_boundary.png
+2025-12-24 15:20:40,542 - __main__ - INFO - ==================================================
+2025-12-24 15:20:40,542 - __main__ - INFO - 手动实现准确率: 0.7143
+2025-12-24 15:20:40,542 - __main__ - INFO - Sklearn 实现准确率: 0.7143
+2025-12-24 15:20:40,542 - __main__ - INFO - ==================================================
+2025-12-24 15:20:40,542 - __main__ - INFO - 特征影响分析:
+2025-12-24 15:20:40,543 - __main__ - INFO - • Glucose: 权重 1.1661, 影响: 正向（增加患病风险）
+2025-12-24 15:20:40,543 - __main__ - INFO - • BMI: 权重 0.7274, 影响: 正向（增加患病风险）
+2025-12-24 15:20:40,543 - __main__ - INFO - • Pregnancies: 权重 0.3805, 影响: 正向（增加患病风险）
+2025-12-24 15:20:40,543 - __main__ - INFO - • DiabetesPedigreeFunction: 权重 0.2593, 影响: 正向（增加患病风险）
+2025-12-24 15:20:40,543 - __main__ - INFO - • BloodPressure: 权重 -0.2048, 影响: 负向（降低患病风险）
+2025-12-24 15:20:40,543 - __main__ - INFO - • Age: 权重 0.1819, 影响: 正向（增加患病风险）
+2025-12-24 15:20:40,543 - __main__ - INFO - • Insulin: 权重 -0.1371, 影响: 负向（降低患病风险）
+2025-12-24 15:20:40,543 - __main__ - INFO - • SkinThickness: 权重 0.0695, 影响: 正向（增加患病风险）
+2025-12-24 15:20:40,543 - __main__ - INFO - 糖尿病预测系统运行完成。
+2025-12-24 15:25:09,298 - __main__ - INFO - 开始运行糖尿病预测系统...
+2025-12-24 15:25:09,298 - __main__ - INFO - 创建目录: diabetes_data
+2025-12-24 15:25:09,298 - __main__ - INFO - 创建目录: diabetes_data/plots
+2025-12-24 15:25:09,298 - __main__ - INFO - 创建目录: diabetes_data/training_data
+2025-12-24 15:25:09,299 - __main__ - INFO - 创建目录: diabetes_data/evaluation_data
+2025-12-24 15:25:09,299 - __main__ - INFO - 创建目录: diabetes_data/feature_analysis
+2025-12-24 15:25:09,299 - __main__ - INFO - 糖尿病预测器初始化完成
+2025-12-24 15:25:09,299 - __main__ - INFO - 尝试从 sklearn.datasets 加载数据集...
+2025-12-24 15:25:09,313 - __main__ - INFO - 成功加载数据，样本数量: 768
+2025-12-24 15:25:09,430 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:25:09,435 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:25:09,493 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:25:09,497 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-12-24 15:25:10,390 - __main__ - INFO - 数据分析图保存至: diabetes_data/plots/data_analysis.png
+2025-12-24 15:25:10,394 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/detailed_distribution.json
+2025-12-24 15:25:10,395 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/correlation_data.json
+2025-12-24 15:25:10,395 - __main__ - INFO - 开始数据预处理...
+2025-12-24 15:25:10,398 - __main__ - INFO - 训练集大小: 614, 测试集大小: 154
+2025-12-24 15:25:10,399 - __main__ - INFO - 迭代 0, 代价: 0.632866
+2025-12-24 15:25:10,403 - __main__ - INFO - 迭代 500, 代价: 0.466207
+2025-12-24 15:25:10,407 - __main__ - INFO - 迭代 1000, 代价: 0.466207
+2025-12-24 15:25:10,411 - __main__ - INFO - 迭代 1500, 代价: 0.466207
+2025-12-24 15:25:10,416 - __main__ - INFO - 手动梯度下降训练完成，最终代价: 0.466207
+2025-12-24 15:25:10,530 - __main__ - INFO - 训练历史图保存至: diabetes_data/plots/training_history.png
+2025-12-24 15:25:10,531 - __main__ - INFO - 绘图数据已保存至: diabetes_data/plots/training_history_data.json
+2025-12-24 15:25:10,717 - __main__ - INFO - 评估结果图保存至: diabetes_data/plots/model_evaluation.png
+2025-12-24 15:25:10,718 - __main__ - INFO - 绘图数据已保存至: diabetes_data/evaluation_data/evaluation_results.json
+2025-12-24 15:25:10,875 - __main__ - INFO - 特征分析图保存至: diabetes_data/plots/feature_importance.png
+2025-12-24 15:25:10,876 - __main__ - INFO - 数据已保存至: diabetes_data/feature_analysis/feature_importance.json
+2025-12-24 15:25:10,911 - __main__ - INFO - 数据已保存至: diabetes_data/feature_analysis/feature_importance.json
+2025-12-24 15:25:11,133 - __main__ - INFO - 决策边界图保存至: diabetes_data/plots/decision_boundary.png
+2025-12-24 15:25:11,150 - __main__ - INFO - ==================================================
+2025-12-24 15:25:11,151 - __main__ - INFO - 手动实现准确率: 0.7143
+2025-12-24 15:25:11,151 - __main__ - INFO - Sklearn 实现准确率: 0.7143
+2025-12-24 15:25:11,151 - __main__ - INFO - ==================================================
+2025-12-24 15:25:11,151 - __main__ - INFO - 特征影响分析:
+2025-12-24 15:25:11,151 - __main__ - INFO - • Glucose: 权重 1.1661, 影响: 正向（增加患病风险）
+2025-12-24 15:25:11,151 - __main__ - INFO - • BMI: 权重 0.7274, 影响: 正向（增加患病风险）
+2025-12-24 15:25:11,151 - __main__ - INFO - • Pregnancies: 权重 0.3805, 影响: 正向（增加患病风险）
+2025-12-24 15:25:11,151 - __main__ - INFO - • DiabetesPedigreeFunction: 权重 0.2593, 影响: 正向（增加患病风险）
+2025-12-24 15:25:11,151 - __main__ - INFO - • BloodPressure: 权重 -0.2048, 影响: 负向（降低患病风险）
+2025-12-24 15:25:11,151 - __main__ - INFO - • Age: 权重 0.1819, 影响: 正向（增加患病风险）
+2025-12-24 15:25:11,151 - __main__ - INFO - • Insulin: 权重 -0.1371, 影响: 负向（降低患病风险）
+2025-12-24 15:25:11,151 - __main__ - INFO - • SkinThickness: 权重 0.0695, 影响: 正向（增加患病风险）
+2025-12-24 15:25:11,151 - __main__ - INFO - 糖尿病预测系统运行完成。

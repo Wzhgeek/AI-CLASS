@@ -1,0 +1,42 @@
+[
+  {
+    "Feature": "Glucose",
+    "Weight": 1.1660757428718576,
+    "AbsWeight": 1.1660757428718576
+  },
+  {
+    "Feature": "BMI",
+    "Weight": 0.7273714375834492,
+    "AbsWeight": 0.7273714375834492
+  },
+  {
+    "Feature": "Pregnancies",
+    "Weight": 0.3804966745304834,
+    "AbsWeight": 0.3804966745304834
+  },
+  {
+    "Feature": "DiabetesPedigreeFunction",
+    "Weight": 0.2593159968512987,
+    "AbsWeight": 0.2593159968512987
+  },
+  {
+    "Feature": "BloodPressure",
+    "Weight": -0.2048285606749772,
+    "AbsWeight": 0.2048285606749772
+  },
+  {
+    "Feature": "Age",
+    "Weight": 0.18187420435642526,
+    "AbsWeight": 0.18187420435642526
+  },
+  {
+    "Feature": "Insulin",
+    "Weight": -0.1370785818140273,
+    "AbsWeight": 0.1370785818140273
+  },
+  {
+    "Feature": "SkinThickness",
+    "Weight": 0.0695035318565232,
+    "AbsWeight": 0.0695035318565232
+  }
+]
